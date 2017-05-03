@@ -10,5 +10,5 @@ const Button = ({ fetcher, listName }) => (
 );
 
 export default connect(null, dispatch => ({
-	fetcher: (listName) => fetchList(dispatch, listName)
+	fetcher: (listName) => dispatch(fetchList(listName))
 }))(Button);
