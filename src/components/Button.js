@@ -1,22 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchList, updateList } from '../actions';
+import { fetchList } from '../actions';
 
 
-const Button = ({ listName, dispatch }) => {
+const Button = ({ fetcher, listName }) => (
+	<button onClick={() => fetcher(listName)}>
+		{listName}
+	</button>
+);
 
-	const fetchListHandler = (listName) => {
-		dispatch(fetchList());
-		fetch(`https://swapi.co/api/${listName}`)
-			.then(response => response.json())
-			.then(json => dispatch(updateList(json.results)));
-	};
-
-	return (
-		<button onClick={() => fetchListHandler(listName)}>
-			{listName}
-		</button>
-	);
-}
-
-export default connect()(Button);
+export default connect(null, dispatch => ({
+	fetcher: (listName) => fetchList(dispatch, listName)
+}))(Button);
