@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { applyMiddleware, createStore } from 'redux'
+import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
-import logger from 'redux-logger'
+import logger from 'redux-logger';
 
 import swapi from './reducers';
 import App from './App';

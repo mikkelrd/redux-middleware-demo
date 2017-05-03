@@ -5,7 +5,7 @@ import { fetchList } from '../actions';
 
 const Button = ({ fetcher, listName }) => (
 	<button onClick={() => fetcher(listName)}>
-		{listName}
+		load {listName}
 	</button>
 );
 
