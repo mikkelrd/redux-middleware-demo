@@ -5,12 +5,12 @@ const initialState = {
 	loading: false,
 };
 
-export default (state = initialState, {type, data}) => {
+export default (state = initialState, {type, payload}) => {
 	switch (type) {
 		case REQUEST_LIST:
 			return {...state, list: [], loading: true};
 		case UPDATE_LIST:
-			return {...state, list: data, loading: false};
+			return {...state, list: payload, loading: false};
 		default:
 			return state;
 	}
