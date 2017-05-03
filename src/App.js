@@ -4,7 +4,7 @@ import { Button, List } from './components';
 const App = () => {
     return (
         <div className="App">
-            <h2>react + redux</h2>
+            <h2>react + redux + thunk</h2>
             <Button listName="people" />
             <Button listName="planets" />
             <List />
